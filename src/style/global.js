@@ -14,7 +14,7 @@ body,
 }
 
 body {
-  background: #7159c1;
+  background: #fafafa;
   -webkit-font-smoothing: antialiased !important;
 }
 
