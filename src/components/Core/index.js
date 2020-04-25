@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable default-case */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { GameContext } from '../../services/GameContext';
 import Hud from '../Hud';
 import { Container, CarPositionSection, Car } from './styles';
 
 export default function Core() {
-  const [position, setPosition] = useState();
+  // const [position, setPosition] = useState();
+  const { playerPosition, setPlayerPosition } = useContext(GameContext);
 
   useEffect(() => {
     document.onkeydown = (event) => {
@@ -29,34 +31,33 @@ export default function Core() {
         // Direction right
         case 39:
         case 68:
-          setPosition('right');
+          setPlayerPosition('right');
           break;
         // Direction middle
         case 37:
         case 65:
-          setPosition('left');
+          setPlayerPosition('left');
           break;
         // Direction left
         case 83:
         case 38:
         case 40:
-          setPosition('middle');
+          setPlayerPosition('middle');
           break;
       }
     };
   });
 
   function loadDirection() {
-    switch (position) {
+    switch (playerPosition) {
       case 'right':
         return '430';
       case 'middle':
         return '240';
-
       case 'left':
         return '40';
       default:
-        return '222';
+        return '240';
     }
   }
 

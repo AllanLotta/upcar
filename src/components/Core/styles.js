@@ -14,6 +14,7 @@ export const CarPositionSection = styled.div`
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid black;
+  height: 100px;
 `;
 export const CarPosition = styled.div`
   width: 150px;
