@@ -13,5 +13,7 @@ export const Container = styled.div`
 export const Main = styled.div`
   width: 600px;
   height: 600px;
+  min-width: 600px;
+  min-height: 600px;
   border: 2px solid #313131;
 `;
