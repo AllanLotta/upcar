@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import Cenary from '../../assets/img/cenary.gif';
-import CarImage from '../../assets/img/car.png';
+// import Cenary from '../../assets/img/cenary.gif';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs(() => {})`
   width: 100%;
   height: 100%;
-  background: url(${Cenary}) no-repeat;
+  background: url(${(props) => props.cenary}) no-repeat;
   background-size: contain;
 `;
 
@@ -22,9 +21,9 @@ export const CarPosition = styled.div`
   border: 1px solid black;
 `;
 
-export const Car = styled.img.attrs({
-  src: CarImage,
-})`
+export const Car = styled.img.attrs((props) => ({
+  src: props.car,
+}))`
   width: 100px;
   height: 100px;
   transition: 0.5s;

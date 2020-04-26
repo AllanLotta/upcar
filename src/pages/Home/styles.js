@@ -28,7 +28,14 @@ export const Container = styled.div`
       border-radius: 50%;
       background-color: #3c3c3c;
       padding: 5px;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
       cursor: pointer;
+    }
+    .activeCar {
+      border: 2px solid #8bc34a;
     }
   }
 

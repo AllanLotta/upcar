@@ -3,12 +3,29 @@
 /* eslint-disable default-case */
 import React, { useState, useEffect, useContext } from 'react';
 import { GameContext } from '../../services/GameContext';
+
+import Cenary from '../../assets/img/cenary.gif';
+import CenaryTurbo from '../../assets/img/cenaryTurbo.gif';
+import CenaryStop from '../../assets/img/cenaryStop.gif';
+
 import Hud from '../Hud';
 import { Container, CarPositionSection, Car } from './styles';
 
+import BlueCar from '../../assets/img/car.png';
+import OrangeCar from '../../assets/img/orangeCar.png';
+import yellowCar from '../../assets/img/yellowCar.png';
+import greenCar from '../../assets/img/greenCar.png';
+
 export default function Core() {
   // const [position, setPosition] = useState();
-  const { playerPosition, setPlayerPosition } = useContext(GameContext);
+  const {
+    playerPosition,
+    setPlayerPosition,
+    playerCar,
+    turbo,
+    setTurbo,
+    maxTurbo,
+  } = useContext(GameContext);
 
   useEffect(() => {
     document.onkeydown = (event) => {
@@ -18,6 +35,12 @@ export default function Core() {
       switch (keycode) {
         // T = Turbo
         case 84:
+          if (!turbo) {
+            setTurbo(true);
+            setTimeout(() => {
+              setTurbo(false);
+            }, 4000);
+          }
           console.log('TURBO');
           break;
         case 80:
@@ -60,13 +83,31 @@ export default function Core() {
         return '240';
     }
   }
+  function loadCar() {
+    switch (playerCar) {
+      case 1:
+        return BlueCar;
+      case 2:
+        return yellowCar;
+      case 3:
+        return greenCar;
+      default:
+        return OrangeCar;
+    }
+  }
+  function loadCenary() {
+    if (turbo) {
+      return CenaryTurbo;
+    }
+    return Cenary;
+  }
 
   return (
     <>
-      <Container>
+      <Container cenary={loadCenary()}>
         <Hud />
         <CarPositionSection>
-          <Car direction={loadDirection()} />
+          <Car car={loadCar()} direction={loadDirection()} />
         </CarPositionSection>
       </Container>
     </>

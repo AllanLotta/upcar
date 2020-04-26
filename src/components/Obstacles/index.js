@@ -11,7 +11,7 @@ import { Container, BoombLeft, BoombMiddle, BoombRight } from './styles';
 
 function Obstacles() {
   const [position, setPosition] = useState('left');
-  const { playerPosition } = useContext(GameContext);
+  const { playerPosition, turbo } = useContext(GameContext);
 
   const checkCollision = useCallback(() => {
     if (playerPosition === position) {
@@ -24,6 +24,7 @@ function Obstacles() {
     if (position === 'left') {
       return (
         <BoombLeft
+          velocity={turbo ? 500 : 1200}
           onAnimationEndCapture={() => {
             setPosition('middle');
             checkCollision();
@@ -34,6 +35,7 @@ function Obstacles() {
     if (position === 'middle') {
       return (
         <BoombMiddle
+          velocity={turbo ? 500 : 1200}
           onAnimationEndCapture={() => {
             setPosition('right');
             checkCollision();
@@ -44,6 +46,7 @@ function Obstacles() {
     if (position === 'right') {
       return (
         <BoombRight
+          velocity={turbo ? 500 : 1200}
           onAnimationEndCapture={() => {
             setPosition('left');
             checkCollision();

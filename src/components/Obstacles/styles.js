@@ -58,7 +58,7 @@ export const BoombLeft = styled.div`
   background-color: red;
   border-radius: 50%;
   animation-name: ${left};
-  animation-duration: 1200ms;
+  animation-duration: ${(props) => props.velocity}ms;
   animation-timing-function: linear;
 `;
 
@@ -68,7 +68,7 @@ export const BoombMiddle = styled.div`
   background-color: red;
   border-radius: 50%;
   animation-name: ${middle};
-  animation-duration: 1200ms;
+  animation-duration: ${(props) => props.velocity}ms;
   animation-timing-function: linear;
 `;
 
@@ -78,6 +78,6 @@ export const BoombRight = styled.div`
   background-color: red;
   border-radius: 50%;
   animation-name: ${right};
-  animation-duration: 1200ms;
+  animation-duration: ${(props) => props.velocity}ms;
   animation-timing-function: linear;
 `;
