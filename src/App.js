@@ -9,11 +9,11 @@ function App() {
     <>
       <Global />
       <Container>
-        <GameProvider>
-          <Main>
+        <Main>
+          <GameProvider>
             <Routes />
-          </Main>
-        </GameProvider>
+          </GameProvider>
+        </Main>
       </Container>
     </>
   );

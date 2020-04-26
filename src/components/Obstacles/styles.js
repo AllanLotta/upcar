@@ -14,7 +14,7 @@ export const Container = styled.div`
   vertical-align: center;
 `;
 
-const down = keyframes`
+const left = keyframes`
   0% {
     width: 20px;
     transform: translate(-20px, 0);
@@ -23,16 +23,61 @@ const down = keyframes`
   100% {
     width: 80px;
     height: 80px;
-    transform: translate(-300px, 350px);
+    transform: translate(-200px, 200px);
+  }
+`;
+const middle = keyframes`
+  0% {
+    width: 20px;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    width: 80px;
+    height: 80px;
+    transform: translate(0, 350px);
   }
 `;
 
-export const Boomb = styled.div`
+const right = keyframes`
+  0% {
+    width: 20px;
+    transform: translate(-20px, 0);
+  }
+
+  100% {
+    width: 80px;
+    height: 80px;
+    transform: translate(200px, 200px);
+  }
+`;
+
+export const BoombLeft = styled.div`
   width: 20px;
   height: 20px;
   background-color: red;
   border-radius: 50%;
-  animation-name: ${down};
+  animation-name: ${left};
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+`;
+
+export const BoombMiddle = styled.div`
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  animation-name: ${middle};
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+`;
+
+export const BoombRight = styled.div`
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  animation-name: ${right};
   animation-duration: 2000ms;
   animation-timing-function: linear;
 `;
