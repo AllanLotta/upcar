@@ -12,6 +12,7 @@ export default function GameProvider(props) {
   const [playerCar, setPlayerCar] = useState(4);
   const [turbo, setTurbo] = useState(false);
   const [maxTurbo, setMaxTurbo] = useState(3);
+  const [startGame, setStartGame] = useState(false);
 
   useEffect(() => {}, []);
 
@@ -28,6 +29,8 @@ export default function GameProvider(props) {
         setTurbo,
         maxTurbo,
         setMaxTurbo,
+        startGame,
+        setStartGame,
       }}
     >
       {children}

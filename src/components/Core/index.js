@@ -24,7 +24,7 @@ export default function Core() {
     playerCar,
     turbo,
     setTurbo,
-    maxTurbo,
+    startGame,
   } = useContext(GameContext);
 
   useEffect(() => {
@@ -96,10 +96,13 @@ export default function Core() {
     }
   }
   function loadCenary() {
-    if (turbo) {
-      return CenaryTurbo;
+    if (startGame) {
+      if (turbo) {
+        return CenaryTurbo;
+      }
+      return Cenary;
     }
-    return Cenary;
+    return CenaryStop;
   }
 
   return (

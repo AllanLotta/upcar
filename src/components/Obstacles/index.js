@@ -11,7 +11,7 @@ import { Container, BoombLeft, BoombMiddle, BoombRight } from './styles';
 
 function Obstacles() {
   const [position, setPosition] = useState('left');
-  const { playerPosition, turbo } = useContext(GameContext);
+  const { playerPosition, turbo, startGame } = useContext(GameContext);
 
   const checkCollision = useCallback(() => {
     if (playerPosition === position) {
@@ -56,7 +56,7 @@ function Obstacles() {
     }
   }, [position, playerPosition]);
 
-  return <Container>{renderBoomb()}</Container>;
+  return <Container>{startGame && renderBoomb()}</Container>;
 }
 
 export default Obstacles;

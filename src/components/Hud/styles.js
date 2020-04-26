@@ -30,4 +30,7 @@ export const Container = styled.div`
         1px 1px 1px rgba(0, 0, 0, 0.5), 5px 4px 2px rgba(99, 81, 56, 0.82);
     }
   }
+  .timer {
+    margin-top: 200px;
+  }
 `;

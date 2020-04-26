@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Lottie from 'react-lottie';
-import carAnimated from '../../resources/animations/carAnimated.json';
+// import Lottie from 'react-lottie';
+// import carAnimated from '../../resources/animations/carAnimated.json';
 import BlueCar from '../../assets/img/car.png';
 import OrangeCar from '../../assets/img/orangeCar.png';
 import yellowCar from '../../assets/img/yellowCar.png';
@@ -11,9 +11,14 @@ import { GameContext } from '../../services/GameContext';
 import { Container } from './styles';
 
 export default function Home() {
-  const { playerCar, setPlayerCar, playerName, setPlayerName } = useContext(
-    GameContext
-  );
+  const {
+    playerCar,
+    setPlayerCar,
+    playerName,
+    setPlayerName,
+    setStartGame,
+    setTurbo,
+  } = useContext(GameContext);
   const CARS = [
     {
       img: BlueCar,
@@ -33,6 +38,12 @@ export default function Home() {
     },
   ];
   // const [selectedCar, setSelectedCar] = useState(1);
+  useEffect(() => {
+    return () => {
+      setStartGame(false);
+      setTurbo(false);
+    };
+  });
 
   return (
     <>
