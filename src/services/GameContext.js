@@ -8,11 +8,13 @@ export default function GameProvider(props) {
   const { children } = props;
 
   const [playerPosition, setPlayerPosition] = useState('middle');
-  const [playerName, setPlayerName] = useState('Lotta');
-  const [playerCar, setPlayerCar] = useState(4);
+  const [playerName, setPlayerName] = useState('');
+  const [playerCar, setPlayerCar] = useState(1);
   const [turbo, setTurbo] = useState(false);
+  const [turboCount, setTurboCount] = useState(0);
   const [maxTurbo, setMaxTurbo] = useState(3);
   const [startGame, setStartGame] = useState(false);
+  const [collisions, setCollisions] = useState(0);
 
   useEffect(() => {}, []);
 
@@ -31,6 +33,10 @@ export default function GameProvider(props) {
         setMaxTurbo,
         startGame,
         setStartGame,
+        collisions,
+        setCollisions,
+        turboCount,
+        setTurboCount,
       }}
     >
       {children}

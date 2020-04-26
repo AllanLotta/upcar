@@ -18,6 +18,7 @@ export default function Home() {
     setPlayerName,
     setStartGame,
     setTurbo,
+    setCollisions,
   } = useContext(GameContext);
   const CARS = [
     {
@@ -42,6 +43,7 @@ export default function Home() {
     return () => {
       setStartGame(false);
       setTurbo(false);
+      setCollisions(0);
     };
   });
 

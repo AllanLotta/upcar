@@ -25,6 +25,9 @@ export default function Core() {
     turbo,
     setTurbo,
     startGame,
+    turboCount,
+    setTurboCount,
+    maxTurbo,
   } = useContext(GameContext);
 
   useEffect(() => {
@@ -36,10 +39,13 @@ export default function Core() {
         // T = Turbo
         case 84:
           if (!turbo) {
-            setTurbo(true);
-            setTimeout(() => {
-              setTurbo(false);
-            }, 4000);
+            if (turboCount !== maxTurbo) {
+              setTurbo(true);
+              setTurboCount(turboCount + 1);
+              setTimeout(() => {
+                setTurbo(false);
+              }, 4000);
+            }
           }
           console.log('TURBO');
           break;

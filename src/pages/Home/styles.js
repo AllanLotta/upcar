@@ -13,6 +13,7 @@ export const Container = styled.div`
   .title {
     font-size: 50px;
     color: #fafafa;
+    font-weight: bold;
     text-shadow: #474747 3px 5px 2px, 6px 2px 6px rgba(206, 89, 55, 0);
   }
 

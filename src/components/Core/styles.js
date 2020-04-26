@@ -28,4 +28,5 @@ export const Car = styled.img.attrs((props) => ({
   height: 100px;
   transition: 0.5s;
   margin-left: ${(props) => props.direction}px;
+  opacity: 0.8;
 `;
