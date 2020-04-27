@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Upcar
 
-## Available Scripts
+Um joguinho de carro simples feito com React js
 
-In the project directory, you can run:
+## Instruções para instação
 
-### `yarn start`
+.Clone o repositório
+.Vá para a pasta do projeto
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Rode o comando:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+`yarn install` ou `npm install`
 
-### `yarn test`
+##### Agora você está pronto para da Start no servidor com o comando:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn start` ou `npm start`
 
-### `yarn build`
+## Estratégia
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para montar esse simples joguinho apenas com a manipulação dos elementos do DOM sem utilizar libs como o canvas, foi preciso driblar alguns desafios:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Movimentação do carro
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para movimentar o carro ele foi posicionado ao bottom da div main do jogo e sua posição alterava de com base na margem do carro ao limite esquerdo da tela.
 
-### `yarn eject`
+#### Obstáculos
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para gerar os obstáculos(CONES) e identificar as colisões foi renderizados divs no centro do cenário com animações que fazem as divs irem do centro ao bottom, simulando assim a aproximação do carro ao obstáculo. Ao término da animação é verificado se o carro se encontra na mesma posição do cone, se sim, é contabilizado um colisão.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Ferramentas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Lista de "ferramentas" utilizadas para construir o joguinho:
+.React js
+.React Hooks
+.Styled Components
+.E um pouco de gambiarra do bem
