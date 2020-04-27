@@ -25,9 +25,12 @@ export default function Core() {
     turbo,
     setTurbo,
     startGame,
+    setStartGame,
     turboCount,
     setTurboCount,
     maxTurbo,
+    pause,
+    setPause,
   } = useContext(GameContext);
 
   useEffect(() => {
@@ -51,12 +54,12 @@ export default function Core() {
           break;
         case 80:
           // R = Retry
-          console.log('RETRY');
-          break;
-        // P = Pause
-        case 82:
+          setPause(!pause);
+          setStartGame(!startGame);
           console.log('PAUSE');
           break;
+        // P = Pause
+
         // Direction right
         case 39:
         case 68:

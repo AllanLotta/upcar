@@ -12,13 +12,11 @@ export const CarPositionSection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 1px solid black;
   height: 100px;
 `;
 export const CarPosition = styled.div`
   width: 150px;
   height: 150px;
-  border: 1px solid black;
 `;
 
 export const Car = styled.img.attrs((props) => ({

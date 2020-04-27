@@ -15,7 +15,11 @@ export default function Hud() {
     turboCount,
     maxTurbo,
     turbo,
+    score,
+    pause,
+    setPause,
   } = useContext(GameContext);
+
   const eventListeners = [
     {
       eventName: 'complete',
@@ -34,7 +38,7 @@ export default function Hud() {
         </Link>
         <div className="playerName">{playerName}</div>
       </div>
-      {!startGame && (
+      {!startGame && !pause ? (
         <div className="timer">
           <Lottie
             eventListeners={eventListeners}
@@ -50,9 +54,10 @@ export default function Hud() {
             height={200}
           />
         </div>
-      )}
+      ) : null}
       <div className="leftSection">
         <div className="item">Batidas: {collisions}</div>
+        <div className="item">T = Turbo</div>
         <div className="item">
           Turbo: {turboCount} / {maxTurbo}
         </div>
@@ -75,7 +80,9 @@ export default function Hud() {
         </div>
       </div>
       <div className="rightSection">
-        <div className="item">Voltas 1/3</div>
+        <div className="item">Score: {score}</div>
+        <div className="item">P = Pause</div>
+        {pause && <div className="item">Pausado!</div>}
       </div>
     </Container>
   );

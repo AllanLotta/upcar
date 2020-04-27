@@ -3,14 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 600px;
   height: 500px;
-  border: 1px solid blue;
   z-index: 999;
 
   .header {
     position: absolute;
     width: 600px;
     height: 100px;
-    border: 3px solid yellow;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -44,7 +42,6 @@ export const Container = styled.div`
     margin-top: 100px;
     height: 300px;
     width: 200px;
-    border: 2px solid yellow;
     .item {
       font-size: 20px;
       color: #ca6500;
@@ -59,16 +56,16 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding: 30px 10px;
-    justify-content: space-between;
     margin-top: 100px;
     margin-left: 400px;
     height: 300px;
     width: 200px;
-    border: 2px solid yellow;
+    text-align: center;
     .item {
       font-size: 20px;
       color: #ca6500;
       font-weight: bold;
+      margin-bottom: 20px;
       text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
         1px 1px 1px rgba(0, 0, 0, 0.5), 5px 4px 2px rgba(99, 81, 56, 0.82);
     }

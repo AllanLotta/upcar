@@ -1,32 +1,29 @@
-import React, {
-  useEffect,
-  useContext,
-  useState,
-  memo,
-  useCallback,
-} from 'react';
-import Lottie from 'react-lottie';
-import boomb from '../../resources/animations/boomb.json';
+import React, { useContext, useState, useCallback } from 'react';
 import { GameContext } from '../../services/GameContext';
 
 import { Container, BoombLeft, BoombMiddle, BoombRight } from './styles';
 
 function Obstacles() {
   const [position, setPosition] = useState('left');
+  const [count, setCount] = useState(0);
   const {
     playerPosition,
     turbo,
     startGame,
+    setStartGame,
     collisions,
     setCollisions,
+    score,
+    setScore,
   } = useContext(GameContext);
 
   const checkCollision = useCallback(() => {
     if (playerPosition === position) {
+      setScore(score - 3);
       setCollisions(collisions + 1);
       return console.log('KABUMM!!!!!!!!!');
     }
-    return console.log('jogou muito');
+    return setScore(score + 7);
   }, [position, playerPosition]);
 
   const renderBoomb = useCallback(() => {

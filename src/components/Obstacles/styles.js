@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px solid pink;
   width: 600px;
   height: 600px;
   margin: 0 auto;
