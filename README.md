@@ -16,6 +16,10 @@ Um joguinho de carro simples feito com React js
 
 `yarn start` ou `npm start`
 
+##### VOILA! O joguinho deve estar rodando:
+
+http://localhost:3000
+
 ## Estratégia
 
 Para montar esse simples joguinho apenas com a manipulação dos elementos do DOM sem utilizar libs como o canvas, foi preciso driblar alguns desafios:
