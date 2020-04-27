@@ -4,8 +4,9 @@ Um joguinho de carro simples feito com React js
 
 ## Instruções para instação
 
-.Clone o repositório
-.Vá para a pasta do projeto
+###### .Clone o repositório
+
+###### .Vá para a pasta do projeto
 
 ##### Rode o comando:
 
@@ -30,7 +31,11 @@ Para gerar os obstáculos(CONES) e identificar as colisões foi renderizados div
 ## Ferramentas
 
 Lista de "ferramentas" utilizadas para construir o joguinho:
-.React js
-.React Hooks
-.Styled Components
-.E um pouco de gambiarra do bem
+
+###### .React js
+
+###### .React Hooks
+
+###### .Styled Components
+
+###### .E um pouco de gambiarra do bem
