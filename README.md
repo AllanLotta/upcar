@@ -1,6 +1,8 @@
 # Upcar
 
 Um joguinho de carro simples feito com React js
+live DEMO:
+https://upcar-f0f65.firebaseapp.com/
 
 ## Instruções para instação
 
